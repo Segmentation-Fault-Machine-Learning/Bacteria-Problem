@@ -4,10 +4,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('result.csv')
+data = pd.read_csv('../processamento_de_dados/result.csv')
 sv = np.asarray(data['Tipo'])
 #retirnado dado do DataFrame
-del data['Unnamed: 0'] # naõ sei o porque mas ele está carregando lixo no arquivo
+
+
 del (data['Tipo'])
 
 
@@ -30,4 +31,3 @@ plt.xlim([-350,350])
 plt.ylim([-350,350])
 plt.legend(['Bacteria 1', 'Bacteria 2','Bacteria 3'],loc='upper left')
 plt.show()
-plt.savefig('tsne.png')
