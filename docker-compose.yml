@@ -1,0 +1,13 @@
+version: "3"
+services:
+  jupython:
+    build: .
+    image: jupython/machine_learning
+    command: "/opt/conda/bin/jupyter notebook --notebook-dir=/var/app --ip='*' --port=8888 --no-browser --allow-root"
+    network_mode: bridge
+    container_name: juPyter
+    volumes:
+      - ./src:/var/app/src
+      - ./data:/var/app/data
+    ports:
+      - 8888:8888
